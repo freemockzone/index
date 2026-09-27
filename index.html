@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+  <title>A to Z OTT Streaming Index | Direct Watch Directory</title>
+  <meta name="title" content="A to Z OTT Streaming Index | Direct Watch Directory">
+  <meta name="description" content="Official A-Z directory of streaming movies and shows across Netflix, Prime Video, JioHotstar, Sony LIV, Aha, Zee5, MX Player, Hoichoi, Discovery+, and Lionsgate Play. Verified direct links.">
+  <meta name="keywords" content="jiohotstar streaming directory, watch web series official link, sony liv catalog a to z, aha telugu movies list, netflix prime video titles, best ott directory india global, where to watch movies online free and paid">
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top App Bar -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="15" rx="3"></rect>
+          <polyline points="17 2 12 7 7 2"></polyline>
+        </svg>
+        <span>OTT<strong>Index</strong></span>
+      </div>
+
+      <button class="mobile-toggle" id="menuToggle" aria-label="Toggle filters">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="filter-drawer" id="filterDrawer">
+        <div class="filter-group">
+          <label for="platformFilter">Platform</label>
+          <select id="platformFilter">
+            <option value="ALL">All 11 Platforms</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="countryFilter">Country</label>
+          <select id="countryFilter">
+            <option value="ALL">All Regions</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="languageFilter">Language</label>
+          <select id="languageFilter">
+            <option value="ALL">All Languages</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="pageSizeSelect">Show</label>
+          <select id="pageSizeSelect">
+            <option value="5">5 per page</option>
+            <option value="10" selected>10 per page</option>
+            <option value="50">50 per page</option>
+            <option value="100">100 per page</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Viewport Shell -->
+  <main class="app-body">
+    <section class="search-panel">
+      <div class="search-input-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search by title, year, OTT platform, country or language..." autocomplete="off">
+        <button id="clearSearch" aria-label="Clear">&times;</button>
+      </div>
+
+      <div class="alphabet-scroll-container">
+        <div class="alphabet-track" id="alphabetTrack"></div>
+      </div>
+    </section>
+
+    <!-- Meta Status -->
+    <div class="meta-strip">
+      <span id="pageInfo">Loading index...</span>
+      <span class="active-badge" id="resultsCount">0 entries</span>
+    </div>
+
+    <!-- Responsive Adaptive Grid / Table -->
+    <section class="catalog-viewport">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th class="col-num">#</th>
+            <th class="col-title">Title</th>
+            <th class="col-year">Year</th>
+            <th class="col-platform">Platform</th>
+            <th class="col-type">Type</th>
+            <th class="col-lang">Language</th>
+            <th class="col-country">Region</th>
+            <th class="col-action">Watch Link</th>
+          </tr>
+        </thead>
+        <tbody id="catalogList"></tbody>
+      </table>
+    </section>
+
+    <div class="pagination-bar" id="paginationBar"></div>
+  </main>
+
+  <footer class="app-footer">
+    <p>Alphabetical OTT Stream Directory &bull; Direct access to verified broadcast streaming platforms.</p>
+    <p class="disclaimer">All brand trademarks and logos (JioHotstar, Netflix, Prime Video, Sony LIV, Aha, Apple TV+, Zee5, Discovery+, Hoichoi, Lionsgate Play, MX Player) belong to their respective copyright holders. Listed strictly for user identification under nominative fair use.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

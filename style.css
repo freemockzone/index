@@ -1,0 +1,418 @@
+:root {
+  --bg-primary: #0a0d14;
+  --bg-surface: #111827;
+  --bg-card: #162032;
+  --border-subtle: #243044;
+  --border-focus: #3b82f6;
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --glow: rgba(37, 99, 235, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  width: 100%;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: -0.02em;
+}
+.brand strong { color: #ffffff; }
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  color: var(--text-primary);
+  padding: 8px;
+  cursor: pointer;
+}
+
+.filter-drawer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.filter-group label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.filter-group select {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.app-body {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.search-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.search-input-wrap {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.search-input-wrap:focus-within {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--glow);
+}
+.search-input-wrap input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.95rem;
+  margin-left: 8px;
+}
+.search-input-wrap button {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: none;
+}
+
+.alphabet-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 0;
+}
+.alphabet-scroll-container::-webkit-scrollbar { display: none; }
+
+.alphabet-track {
+  display: inline-flex;
+  gap: 4px;
+}
+.letter-pill {
+  min-width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.letter-pill.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: #60a5fa;
+}
+
+.meta-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.active-badge {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: #38bdf8;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.catalog-viewport {
+  width: 100%;
+  border-radius: 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.catalog-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.catalog-table th {
+  background: #151e2e;
+  padding: 12px 14px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.catalog-table td {
+  padding: 12px 14px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+.catalog-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.ott-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.ott-badge svg {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.sub-tag {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.btn-stream {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  background: var(--accent);
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-stream:hover {
+  background: var(--accent-hover);
+}
+
+.pagination-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 16px 0;
+}
+.page-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.page-btn.active {
+  background: var(--accent);
+  border-color: #60a5fa;
+  color: #ffffff;
+}
+.page-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.page-dots {
+  color: var(--text-muted);
+  padding: 0 4px;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 32px 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+}
+.disclaimer {
+  max-width: 800px;
+  margin: 10px auto 0;
+  font-size: 0.72rem;
+  color: #475569;
+  line-height: 1.4;
+}
+
+/* -----------------------------------------------------------
+   MOBILE ADAPTIVE ENGINE (< 768px)
+----------------------------------------------------------- */
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: block;
+  }
+
+  .filter-drawer {
+    display: none;
+    position: absolute;
+    top: 57px;
+    left: 0;
+    width: 100%;
+    background: #0f1624;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 16px;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  }
+  .filter-drawer.open {
+    display: flex;
+  }
+  .filter-group {
+    width: 100%;
+  }
+  .filter-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  .catalog-viewport {
+    background: transparent;
+    border: none;
+  }
+  .catalog-table, 
+  .catalog-table thead, 
+  .catalog-table tbody, 
+  .catalog-table tr {
+    display: block;
+    width: 100%;
+  }
+  .catalog-table thead {
+    display: none;
+  }
+
+  .catalog-table tbody tr {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .catalog-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  .catalog-table td.col-num {
+    display: none;
+  }
+
+  .catalog-table td.col-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding-bottom: 8px;
+  }
+
+  /* Added Year label for mobile cards */
+  .catalog-table td.col-year::before { content: "Release Year"; color: var(--text-muted); font-size: 0.8rem; }
+  .catalog-table td.col-platform::before { content: "Platform"; color: var(--text-muted); font-size: 0.8rem; }
+  .catalog-table td.col-type::before { content: "Format"; color: var(--text-muted); font-size: 0.8rem; }
+  .catalog-table td.col-lang::before { content: "Language"; color: var(--text-muted); font-size: 0.8rem; }
+  .catalog-table td.col-country::before { content: "Region"; color: var(--text-muted); font-size: 0.8rem; }
+
+  .catalog-table td.col-action {
+    margin-top: 6px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .btn-stream {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}
